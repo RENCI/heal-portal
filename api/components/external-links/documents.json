@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_external_links_documents",
+  "info": {
+    "name": "Documents",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "URL": {
+      "type": "string",
+      "regex": "http\\:\\/\\/.+\\.com.+$"
+    }
+  }
+}

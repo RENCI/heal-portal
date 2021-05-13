@@ -1,0 +1,67 @@
+@keyframes fadein {
+  from { filter: opacity(0.0); }
+  to { filter: opacity(1.0); }
+}
+
+@keyframes slideright {
+  from {
+    filter: opacity(0.0);
+    transform: translateX(-50px);
+  }
+  to {
+    filter: opacity(1.0);
+    transform: translateX(0);
+  }
+}
+
+.ant-menu .anticon {
+  font-size: 12pt !important;
+}
+
+.ant-menu-item {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.page-wrapper {
+  height: 100vh;
+}
+
+.sider {
+  animation: slideright 250ms;
+}
+
+.brand {
+  max-width: 200px;
+  min-width: 200px;
+  height: 90px;
+  background-color: transparent;
+  background-image: url(../../images/heal-logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: min-width 250ms, max-width 250ms, transform 250ms;
+  background-position: center center;
+}
+.brand.normal {
+  transform: scale(1) translateX(0);
+}
+.brand.mini {
+  transform: scale(1.5) translateX(25px);
+}
+
+.ant-layout.main {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.ant-layout .main > div {
+  width: 100%;
+}
+
+.page-title,
+.breadcrumbs,
+.page-content {
+  animation: fadein 250ms ease-in;
+}
