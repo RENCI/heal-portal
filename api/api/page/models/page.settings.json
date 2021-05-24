@@ -28,6 +28,11 @@
     },
     "icon": {
       "type": "string"
+    },
+    "mainMenu": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

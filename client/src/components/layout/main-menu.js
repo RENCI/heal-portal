@@ -1,5 +1,5 @@
 import { Link } from '@reach/router'
-import { Divider, Menu } from 'antd'
+import { Menu } from 'antd'
 import {
   AppstoreOutlined as GenericIcon,
   CalendarOutlined as CalendarIcon,
@@ -11,7 +11,7 @@ import {
   IdcardOutlined as ProfileIcon,
 } from '@ant-design/icons'
 import * as Icons from '@ant-design/icons'
-import { useAuth, useContent } from '../../../contexts'
+import { useAuth, useContent } from '../../contexts'
 
 const { SubMenu } = Menu
 
@@ -25,17 +25,19 @@ export const MainMenu = () => {
       <Menu.Item key={ `main-menu_Dashboard` } icon={ <DashboardIcon /> }><Link to="/dashboard">Dashboard</Link></Menu.Item>
       <Menu.Item key={ `main-menu_Directory` } icon={ <DirectoryIcon /> }><Link to="/directory">Directory</Link></Menu.Item>
       {
-        pages.map(page => {
-          let MenuItemIcon = GenericIcon
-          if (page.icon && Icons[page.icon]) {
-            MenuItemIcon = Icons[page.icon]
-          }
-          return (
-            <Menu.Item key={ `main-menu_${ page.Title }` } icon={ <MenuItemIcon /> }>
-              <Link to={ page.Slug }>{ page.Title }</Link>
-            </Menu.Item>
-          )
-        })
+        pages
+          .filter(page => page.mainMenu)
+          .map(page => {
+            let MenuItemIcon = GenericIcon
+            if (page.icon && Icons[page.icon]) {
+              MenuItemIcon = Icons[page.icon]
+            }
+            return (
+              <Menu.Item key={ `main-menu_${ page.Title }` } icon={ <MenuItemIcon /> }>
+                <Link to={ page.Slug }>{ page.Title }</Link>
+              </Menu.Item>
+            )
+          })
       }
       <SubMenu title={ user.displayName } icon={ <UserIcon /> }>
         <Menu.Item key="account-menu_profile" icon={ <ProfileIcon /> }>

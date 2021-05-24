@@ -1,0 +1,33 @@
+.ant-layout.main {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: linear-gradient(transparent 0%, transparent 50%, azure 100%);
+}
+
+.ant-layout .main > div {
+  width: 100%;
+  max-width: 1080px;
+}
+
+.page-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 4rem;
+}
+
+.page-header,
+.page-content {
+  animation: fadein 250ms ease-in;
+}
+
+/*
+ * CMS Page 
+  */
+
+.edit-button {
+  animation: fadein 500ms;
+}

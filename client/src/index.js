@@ -9,18 +9,15 @@ const {
   AuthProvider,
   ContentProvider,
   EventsProvider,
-  MsalProvider,
 } = Contexts
 
 const ContextProviders = ({ children }) => {
   return (
     <AuthProvider>
       <ContentProvider>
-        <MsalProvider>
-          <EventsProvider>
-            { children }
-          </EventsProvider>
-        </MsalProvider>
+        <EventsProvider>
+          { children }
+        </EventsProvider>
       </ContentProvider>
     </AuthProvider>
   )

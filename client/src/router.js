@@ -1,4 +1,3 @@
-import { createComponent } from 'react'
 import { Router as ReachRouter } from '@reach/router'
 import { useContent } from './contexts'
 import { CMSPage } from './components/layout'
@@ -35,16 +34,13 @@ export const Router = () => {
       { /* CMS Views */ }
       {
         pages.map(page => {
-          page.path = page.Slug ? `/${ page.Slug }` : '/'
           return (
-            <CMSPage key={ page.Slug } exact path={ page.path }
+            <CMSPage
+              key={ page.Slug } exact path={ page.path || '/' }
               id={ page.id }
               title={ page.Title }
-              breadcrumbs={[
-                { text: 'Home', path: '/' },
-                { text: page.Title, path: page.Slug },
-              ]}
-              html={ page.html }
+              breadcrumbs={ page.breadcrumbs }
+              markdown={ page.Content }
             />
           )
         })

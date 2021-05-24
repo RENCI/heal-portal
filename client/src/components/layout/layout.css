@@ -30,6 +30,9 @@
 .sider {
   animation: slideright 250ms;
 }
+.ant-layout-sider-children {
+  overflow: hidden !important;
+}
 
 .brand {
   max-width: 200px;
@@ -47,21 +50,4 @@
 }
 .brand.mini {
   transform: scale(1.5) translateX(25px);
-}
-
-.ant-layout.main {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.ant-layout .main > div {
-  width: 100%;
-}
-
-.page-title,
-.breadcrumbs,
-.page-content {
-  animation: fadein 250ms ease-in;
 }

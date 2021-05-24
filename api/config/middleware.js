@@ -5,6 +5,7 @@ module.exports = {
       origin: [
         'http://localhost:1337',
         'http://localhost:3000',
+        'http://localhost:3001',
       ],
     }
   }

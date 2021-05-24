@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Page } from '../../components/layout'
 import { useEvents } from '../../contexts'
 
